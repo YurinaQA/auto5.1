@@ -1,7 +1,6 @@
 package ru.netology.delivery;
 
 import com.github.javafaker.Faker;
-import lombok.Data;
 import lombok.Value;
 import lombok.val;
 
@@ -22,7 +21,7 @@ public class DataGenerator {
         return date;
     }
 
-    public static String generateCity(String locale) {
+    public static String generateCity() {
         // TODO: добавить логику для объявления переменной city и задания её значения, генерацию можно выполнить
         // с помощью Faker, либо используя массив валидных городов и класс Random
 
@@ -57,7 +56,7 @@ public class DataGenerator {
         public static UserInfo generateUser(String locale) {
             // TODO: добавить логику для создания пользователя user с использованием методов generateCity(locale),
             // generateName(locale), generatePhone(locale)
-            val user = new UserInfo(generateCity(locale), generateName(locale), generatePhone(locale));
+            val user = new UserInfo(generateCity(), generateName(locale), generatePhone(locale));
             return user;
         }
     }
