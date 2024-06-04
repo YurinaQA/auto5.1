@@ -1,21 +1,20 @@
-package ru.netology.delivery;
+package test;
 
 import lombok.val;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
-import ru.netology.delivery.DataGenerator;
+import data.DataGenerator;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static ru.netology.delivery.DataGenerator.generateCity;
+import static data.DataGenerator.generateCity;
 
 
 public class DeliveryTest {
-
 
     @BeforeEach
     void setup() {
@@ -25,7 +24,7 @@ public class DeliveryTest {
     @Test
     @DisplayName("Should successful plan and replan meeting")
     void shouldSuccessfulPlanAndReplanMeeting() {
-        var validUser = DataGenerator.Registration.generateUser("ru");
+        DataGenerator.Registration.generateUser("ru");
         var daysToAddForFirstMeeting = 4;
         var firstMeetingDate = DataGenerator.generateDate(daysToAddForFirstMeeting);
         var daysToAddForSecondMeeting = 7;
